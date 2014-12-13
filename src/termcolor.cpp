@@ -7,4 +7,5 @@ std::ostream& operator<<(std::ostream& os, const Modifier& mod) {
 }
 
 Modifier red(FG_RED);
+Modifier green(FG_GREEN);
 Modifier clear(FG_DEFAULT);

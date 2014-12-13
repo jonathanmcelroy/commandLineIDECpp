@@ -3,6 +3,8 @@
 #include <regex>
 #include <sstream>
 
+#include "termcolor.h"
+
 #include "init.h"
 #include "languages.h"
 using namespace std;
@@ -28,7 +30,7 @@ bool exitCommand(string input) {
 }
 
 ostream& prompt(ostream& out) {
-    return out << "-> ";
+    return out << green << "-> " << clear;
 }
 
 void evaluateCommand(string line) {

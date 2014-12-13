@@ -23,6 +23,7 @@ class Modifier {
 };
 
 extern Modifier red;
+extern Modifier green;
 extern Modifier clear;
 
 #endif // define TERMCOLOR_H
