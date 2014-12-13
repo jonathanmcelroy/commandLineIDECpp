@@ -34,3 +34,6 @@
 Session.vim
 .netrwhist
 *~
+
+# project specific
+commandide
