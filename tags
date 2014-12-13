@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CPP	languages.h	/^    CPP,$/;"	e	enum:Language
+FUNCTIONS_H	functions.h	2;"	d
+Haskell	languages.h	/^    Haskell$/;"	e	enum:Language
+INIT_H	init.h	2;"	d
+LANGUAGES_H	languages.h	2;"	d
+Language	languages.h	/^enum Language {$/;"	g
+None	languages.h	/^    None,$/;"	e	enum:Language
+Python	languages.h	/^    Python,$/;"	e	enum:Language
+evaluateCommand	main.cpp	/^void evaluateCommand(string line) {$/;"	f
+exitCommand	main.cpp	/^bool exitCommand(string input) {$/;"	f
+getLanguageFromExtention	languages.cpp	/^Language getLanguageFromExtention(string ext) {$/;"	f
+getLanguageFromFile	languages.cpp	/^Language getLanguageFromFile(string fileName) {$/;"	f
+getLanguageFromFiles	languages.cpp	/^Language getLanguageFromFiles(list<string> files) {$/;"	f
+getLanguageName	languages.cpp	/^string getLanguageName(Language l) {$/;"	f
+getRecursiveCodeFiles	functions.cpp	/^std::vector<std::string> getRecursiveCodeFiles() {$/;"	f
+initProject	init.cpp	/^bool initProject() {$/;"	f
+initProject	init.cpp	/^bool initProject(Language l) {$/;"	f
+main	main.cpp	/^int main() {$/;"	f
+prompt	main.cpp	/^ostream& prompt(ostream& out) {$/;"	f
