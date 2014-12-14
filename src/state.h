@@ -9,6 +9,7 @@ private:
 public:
     State();
     State(Language newLanguage);
+    Language getLanguage();
 };
 
 #endif // define STATE_H

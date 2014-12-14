@@ -31,14 +31,19 @@ int main() {
 
 // write the prompt
 ostream& prompt(ostream& out, State state) {
-    return out << green << "-> " << clear;
+    if(state.getLanguage() == None) {
+        return out << green << "no language > " << clear;
+    }
+    else {
+        return out << green << getLanguageName(state.getLanguage()) << " > " << clear;
+    }
 }
 
 // evaluate the line as a command
 bool evaluateCommand(string line) {
     // turn the line into a stream
     istringstream in(line);
-    
+
     // get the command name
     string command;
     in >> command;
@@ -49,7 +54,7 @@ bool evaluateCommand(string line) {
     }
     // if the command is init, initiate the project
     else if(regex_match(command, INIT)) {
-        //initProject();
+        initProject();
         cout << "Init the project" << endl;
     }
     else {

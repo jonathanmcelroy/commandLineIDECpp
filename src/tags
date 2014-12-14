@@ -4,16 +4,32 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BG_BLUE	termcolor.h	/^    BG_BLUE     = 44,$/;"	e	enum:Color
+BG_DEFAULT	termcolor.h	/^    BG_DEFAULT  = 49$/;"	e	enum:Color
+BG_GREEN	termcolor.h	/^    BG_GREEN    = 42,$/;"	e	enum:Color
+BG_RED	termcolor.h	/^    BG_RED      = 41,$/;"	e	enum:Color
 CPP	languages.h	/^    CPP,$/;"	e	enum:Language
+Color	termcolor.h	/^enum Color {$/;"	g
+FG_BLUE	termcolor.h	/^    FG_BLUE     = 34,$/;"	e	enum:Color
+FG_DEFAULT	termcolor.h	/^    FG_DEFAULT  = 39,$/;"	e	enum:Color
+FG_GREEN	termcolor.h	/^    FG_GREEN    = 32,$/;"	e	enum:Color
+FG_RED	termcolor.h	/^    FG_RED      = 31,$/;"	e	enum:Color
 FUNCTIONS_H	functions.h	2;"	d
 Haskell	languages.h	/^    Haskell$/;"	e	enum:Language
 INIT_H	init.h	2;"	d
 LANGUAGES_H	languages.h	2;"	d
 Language	languages.h	/^enum Language {$/;"	g
+Modifier	termcolor.h	/^        Modifier(Color newColor) : color(newColor) {}$/;"	f	class:Modifier
+Modifier	termcolor.h	/^class Modifier {$/;"	c
 None	languages.h	/^    None,$/;"	e	enum:Language
 Python	languages.h	/^    Python,$/;"	e	enum:Language
-evaluateCommand	main.cpp	/^void evaluateCommand(string line) {$/;"	f
-exitCommand	main.cpp	/^bool exitCommand(string input) {$/;"	f
+STATE_H	state.h	2;"	d
+State	state.cpp	/^State::State() : language(None) {}$/;"	f	class:State
+State	state.cpp	/^State::State(Language newLanguage) : language(newLanguage) {}$/;"	f	class:State
+State	state.h	/^class State {$/;"	c
+TERMCOLOR_H	termcolor.h	2;"	d
+color	termcolor.h	/^        Color color;$/;"	m	class:Modifier
+evaluateCommand	main.cpp	/^bool evaluateCommand(string line) {$/;"	f
 getLanguageFromExtention	languages.cpp	/^Language getLanguageFromExtention(string ext) {$/;"	f
 getLanguageFromFile	languages.cpp	/^Language getLanguageFromFile(string fileName) {$/;"	f
 getLanguageFromFiles	languages.cpp	/^Language getLanguageFromFiles(list<string> files) {$/;"	f
@@ -21,5 +37,7 @@ getLanguageName	languages.cpp	/^string getLanguageName(Language l) {$/;"	f
 getRecursiveCodeFiles	functions.cpp	/^std::vector<std::string> getRecursiveCodeFiles() {$/;"	f
 initProject	init.cpp	/^bool initProject() {$/;"	f
 initProject	init.cpp	/^bool initProject(Language l) {$/;"	f
+language	state.h	/^    Language language;$/;"	m	class:State
 main	main.cpp	/^int main() {$/;"	f
-prompt	main.cpp	/^ostream& prompt(ostream& out) {$/;"	f
+operator <<	termcolor.cpp	/^std::ostream& operator<<(std::ostream& os, const Modifier& mod) {$/;"	f
+prompt	main.cpp	/^ostream& prompt(ostream& out, State state) {$/;"	f

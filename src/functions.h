@@ -5,5 +5,6 @@
 #include <vector>
 
 std::vector<std::string> getRecursiveCodeFiles();
+std::vector<std::string> getRecursiveCodeFiles(const char*);
 
 #endif // define FUNCTIONS_H

@@ -4,8 +4,16 @@
 #include "languages.h"
 #include "functions.h"
 
+#include "jm_ostream.h"
+
 std::vector<std::string> getRecursiveCodeFiles() {
-    auto dir = opendir(".");
+    return getRecursiveCodeFiles(".");
+}
+
+std::vector<std::string> getRecursiveCodeFiles(const char* path) {
+    // open the path directory
+    auto dir = opendir(path);
+
     decltype(readdir(dir)) file;
     while((file = readdir(dir)) && file != NULL) {
         auto fileType = getLanguageFromFile(file->d_name);
