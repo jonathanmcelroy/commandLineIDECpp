@@ -48,8 +48,10 @@ bool evaluateCommand(string line) {
     string command;
     in >> command;
 
+    // if the command is nothing, do nothing
+    if(command == "") {}
     // if the command is exit, return false to exit
-    if(regex_match(command, EXIT)) {
+    else if(regex_match(command, EXIT)) {
         return false;
     }
     // if the command is init, initiate the project
@@ -58,7 +60,7 @@ bool evaluateCommand(string line) {
         cout << "Init the project" << endl;
     }
     else {
-        cout << "Unrecognized command" << endl;
+        cout << "Unrecognized command: " << command << endl;
     }
 
     return true;

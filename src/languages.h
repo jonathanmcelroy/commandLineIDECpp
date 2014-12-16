@@ -14,9 +14,6 @@ enum Language {
 };
 
 string getLanguageName(Language);
-Language getLanguageFromFiles(list<string>);
-Language getLanguageFromFile(string);
-Language getLanguageFromExtention(string);
 
 Language getLanguageFromFiles(list<boost::filesystem::path>);
 Language getLanguageFromFile(boost::filesystem::path);
