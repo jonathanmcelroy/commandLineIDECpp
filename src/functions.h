@@ -3,9 +3,9 @@
 
 #include <boost/filesystem.hpp>
 #include <string>
-#include <vector>
+#include <list>
 
-std::vector<boost::filesystem::path> getRecursiveCodeFiles();
-std::vector<boost::filesystem::path> getRecursiveCodeFiles(boost::filesystem::path path);
+std::list<boost::filesystem::path> getRecursiveCodeFiles();
+std::list<boost::filesystem::path> getRecursiveCodeFiles(boost::filesystem::path path);
 
 #endif // define FUNCTIONS_H

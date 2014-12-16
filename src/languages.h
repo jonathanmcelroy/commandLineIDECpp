@@ -4,7 +4,6 @@
 #include <boost/filesystem.hpp>
 #include <string>
 #include <list>
-using namespace std;
 
 enum Language {
     None,
@@ -13,9 +12,10 @@ enum Language {
     Haskell
 };
 
-string getLanguageName(Language);
+std::string getLanguageName(Language);
+Language getLanguageFromName(std::string);
 
-Language getLanguageFromFiles(list<boost::filesystem::path>);
+Language getLanguageFromFiles(std::list<boost::filesystem::path>);
 Language getLanguageFromFile(boost::filesystem::path);
 Language getLanguageFromExtention(boost::filesystem::path);
 
