@@ -1,3 +1,4 @@
+#include <iostream>
 #include "languages.h"
 using namespace std;
 
@@ -16,7 +17,7 @@ string getLanguageName(Language l) {
 
 // return the language for all the files if it is the same for all. Otherwise return None
 Language getLanguageFromFiles(list<boost::filesystem::path> paths) {
-    Language language;
+    Language language(None);
     // for each file
     for(auto path : paths) {
         Language tempLang = getLanguageFromFile(path);

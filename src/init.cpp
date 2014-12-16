@@ -2,11 +2,19 @@
 #include <fstream>
 
 #include "functions.h"
+#include "languages.h"
 #include "init.h"
 
 bool initProject() {
     auto files = getRecursiveCodeFiles();
-    return true;
+    Language language = getLanguageFromFiles(files);
+    if(language == None) {
+        std::cout << "More than one programming language in this directory" << std::endl;
+        return false;
+    }
+    else {
+        return initProject(language);
+    }
 }
 
 bool initProject(Language l) {
@@ -14,7 +22,7 @@ bool initProject(Language l) {
     if(!file) {
         return false;
     }
-    file << "Language ";
-    file << l << std::endl;
+    file << "Language: ";
+    file << getLanguageName(l) << std::endl;
     return true;
 }
