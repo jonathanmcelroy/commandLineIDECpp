@@ -40,6 +40,15 @@ Language getLanguageFromFile(string fileName) {
     return getLanguageFromExtention(extension);
 }
 
+Language getLanguageFromFile(boost::filesystem::path fileName) {
+    auto extensionI = fileName.rfind(".");
+    if(extensionI >= fileName.size()) {
+        return None;
+    }
+    auto extension = fileName.substr(extensionI);
+    return getLanguageFromExtention(extension);
+}
+
 Language getLanguageFromExtention(string ext) {
     if(ext == ".cpp" || ext == ".h") {
         return CPP;

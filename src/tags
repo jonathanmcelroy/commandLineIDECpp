@@ -30,11 +30,13 @@ State	state.h	/^class State {$/;"	c
 TERMCOLOR_H	termcolor.h	2;"	d
 color	termcolor.h	/^        Color color;$/;"	m	class:Modifier
 evaluateCommand	main.cpp	/^bool evaluateCommand(string line) {$/;"	f
+getLanguage	state.cpp	/^Language State::getLanguage() {$/;"	f	class:State
 getLanguageFromExtention	languages.cpp	/^Language getLanguageFromExtention(string ext) {$/;"	f
 getLanguageFromFile	languages.cpp	/^Language getLanguageFromFile(string fileName) {$/;"	f
 getLanguageFromFiles	languages.cpp	/^Language getLanguageFromFiles(list<string> files) {$/;"	f
 getLanguageName	languages.cpp	/^string getLanguageName(Language l) {$/;"	f
 getRecursiveCodeFiles	functions.cpp	/^std::vector<std::string> getRecursiveCodeFiles() {$/;"	f
+getRecursiveCodeFiles	functions.cpp	/^std::vector<std::string> getRecursiveCodeFiles(boost::filesystem::path path) {$/;"	f
 initProject	init.cpp	/^bool initProject() {$/;"	f
 initProject	init.cpp	/^bool initProject(Language l) {$/;"	f
 language	state.h	/^    Language language;$/;"	m	class:State

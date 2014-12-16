@@ -7,7 +7,8 @@ CC 			= g++
 endif
 CC_FLAGS	= -Wall -pedantic -g -I $(HOME)/.cppuseful/ -std=c++11
 #CC_LINK		= -lGL -lGLU -lglut -lpthread
-CC_LINK     =
+#CC_LINK     = -L /usr/local/boost-1.57.0/lib/ -l boost_filesystem -l boost_system
+CC_LINK 	= -l boost_filesystem -l boost_system
 
 # Filenames
 EXEC		= commandide
