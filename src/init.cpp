@@ -1,10 +1,12 @@
+#include <iostream>
 #include <fstream>
 
 #include "functions.h"
 #include "init.h"
 
+#include "jm_ostream.h"
 bool initProject() {
-    getRecursiveCodeFiles();
+    std::cout << getRecursiveCodeFiles();
     return true;
 }
 

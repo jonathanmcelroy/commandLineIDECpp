@@ -40,16 +40,30 @@ Language getLanguageFromFile(string fileName) {
     return getLanguageFromExtention(extension);
 }
 
-Language getLanguageFromFile(boost::filesystem::path fileName) {
-    auto extensionI = fileName.rfind(".");
-    if(extensionI >= fileName.size()) {
+Language getLanguageFromExtention(string ext) {
+    if(ext == ".cpp" || ext == ".h") {
+        return CPP;
+    }
+    else if(ext == ".py") {
+        return Python;
+    }
+    else if(ext == ".hs") {
+        return Haskell;
+    }
+    else {
         return None;
     }
-    auto extension = fileName.substr(extensionI);
+}
+
+Language getLanguageFromFile(boost::filesystem::path fileName) {
+    auto extension = fileName.extension();
+    if(extension.empty()) {
+        return None;
+    }
     return getLanguageFromExtention(extension);
 }
 
-Language getLanguageFromExtention(string ext) {
+Language getLanguageFromExtention(boost::filesystem::path ext) {
     if(ext == ".cpp" || ext == ".h") {
         return CPP;
     }

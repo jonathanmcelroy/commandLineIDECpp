@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-std::vector<std::string> getRecursiveCodeFiles();
-std::vector<std::string> getRecursiveCodeFiles(boost::filesystem::path path);
+std::vector<boost::filesystem::path> getRecursiveCodeFiles();
+std::vector<boost::filesystem::path> getRecursiveCodeFiles(boost::filesystem::path path);
 
 #endif // define FUNCTIONS_H
