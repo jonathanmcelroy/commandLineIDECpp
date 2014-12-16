@@ -4,9 +4,8 @@
 #include "functions.h"
 #include "init.h"
 
-#include "jm_ostream.h"
 bool initProject() {
-    std::cout << getRecursiveCodeFiles();
+    auto files = getRecursiveCodeFiles();
     return true;
 }
 

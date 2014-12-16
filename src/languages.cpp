@@ -5,56 +5,32 @@ string getLanguageName(Language l) {
     switch(l) {
     case CPP:
         return "C++";
-        break;
     case Python:
         return "Python";
-        break;
     case Haskell:
         return "Haskell";
-        break;
     default:
         return "Unknown";
     }
 }
 
-Language getLanguageFromFiles(list<string> files) {
-    if(files.size() == 0) {
-        return None;
-    }
-    auto finalType = getLanguageFromFile(files.front());
-    for(auto file : files) {
-        auto type = getLanguageFromFile(file);
-        if(finalType != type) {
+// return the language for all the files if it is the same for all. Otherwise return None
+Language getLanguageFromFiles(list<boost::filesystem::path> paths) {
+    Language language;
+    for(auto path : paths) {
+        Language tempLang = getLanguageFromFile(path);
+        if(language == None) {
+            language = tempLang;
+        }
+        else if(language != tempLang) {
             return None;
         }
     }
-    return finalType;
+
+    return language;
 }
 
-Language getLanguageFromFile(string fileName) {
-    auto extensionI = fileName.rfind(".");
-    if(extensionI >= fileName.size()) {
-        return None;
-    }
-    auto extension = fileName.substr(extensionI);
-    return getLanguageFromExtention(extension);
-}
-
-Language getLanguageFromExtention(string ext) {
-    if(ext == ".cpp" || ext == ".h") {
-        return CPP;
-    }
-    else if(ext == ".py") {
-        return Python;
-    }
-    else if(ext == ".hs") {
-        return Haskell;
-    }
-    else {
-        return None;
-    }
-}
-
+// returns the language of the file based on the extention
 Language getLanguageFromFile(boost::filesystem::path fileName) {
     auto extension = fileName.extension();
     if(extension.empty()) {
@@ -63,6 +39,7 @@ Language getLanguageFromFile(boost::filesystem::path fileName) {
     return getLanguageFromExtention(extension);
 }
 
+// returns the langauge for the given extention
 Language getLanguageFromExtention(boost::filesystem::path ext) {
     if(ext == ".cpp" || ext == ".h") {
         return CPP;
